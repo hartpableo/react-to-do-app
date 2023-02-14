@@ -1,12 +1,14 @@
 import React from "react"
 import Header from './components/Header'
-import List from './components/List'
+import TasksList from './components/TasksList'
 
 export default function App() {
   return (
     <>
-      <Header />
-      <List />
+      <Header
+        title='my Todos'
+      />
+      <TasksList />
     </>
   )
 }
