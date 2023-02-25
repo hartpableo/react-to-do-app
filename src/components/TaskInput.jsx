@@ -1,21 +1,23 @@
 import React, { useState } from "react"
 
-export default function TaskInput() {
+export default function TaskInput(props) {
+    const { addTask } = props
     const [ task, setTask ] = useState('')
 
     const handleChange = event => {
-        let taskValue = event.target.value
-        setTask( taskValue )
+        setTask( event.target.value )
     }
 
-    const addTask = () => {
-        console.log('to be continued!')
+    const handleSubmit = event => {
+        event.preventDefault()
+        addTask(task)
+        setTask('')
     }
 
     return (
-        <div className="p-5 border-b border-solid border-gray-800 flex flex-row justify-start items-stretch flex-nowrap border-b border-solid border-gray-800 mb-4">
+        <form className="p-5 border-b border-solid border-gray-800 flex flex-row justify-start items-stretch flex-nowrap border-b border-solid border-gray-800 mb-4">
             <input 
-                type="text" 
+                type="text"
                 name="Add a task" 
                 id="add-task" 
                 placeholder="Add task.." 
@@ -24,13 +26,13 @@ export default function TaskInput() {
                 onChange={ handleChange }
             />
             <button 
-                type="button" 
+                type="submit" 
                 className="min-w-[50px] h-[50px] rounded-full text-white flex justify-center items-center bg-yellow-300 hover:bg-yellow-600 transition shadow-md" 
                 aria-hidden='true'
-                onClick={ addTask }
+                onClick={ handleSubmit }
                 >
                     <i className="bi bi-pencil-fill"></i>
             </button>
-        </div>
+        </form>
     )
 }

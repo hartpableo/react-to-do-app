@@ -1,6 +1,6 @@
 import React from "react"
 import Header from './components/Header'
-import TasksList from './components/TasksList'
+import TasksWrapper from './components/TasksWrapper'
 
 export default function App() {
   return (
@@ -8,7 +8,7 @@ export default function App() {
       <Header
         title='my Todos'
       />
-      <TasksList />
+      <TasksWrapper />
     </>
   )
 }
