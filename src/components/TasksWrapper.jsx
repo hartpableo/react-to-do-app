@@ -11,6 +11,11 @@ export default function TasksWrapper() {
         setmyTasks( [ ...myTasks, newTask ] );
     }
 
+    // function removeTask(id) {
+    //     const remainingTasks = myTasks.filter(task => id !== task.id)
+    //     setmyTasks(remainingTasks)
+    // }
+
     return (
         <main className="container">
             <div className="relative bg-yellow-100 shadow-xl rounded-xl border border-solid border-gray-800">
