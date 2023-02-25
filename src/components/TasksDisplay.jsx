@@ -10,7 +10,6 @@ export default function TasksDisplay(props) {
                 key={ taskItem.id }
                 id={ taskItem.id }
                 taskName={ taskItem.taskName }
-                taskCompleted={ taskItem.taskCompleted }
             />
         )
     })

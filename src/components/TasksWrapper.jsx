@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import TaskInput from "./TaskInput"
 import TasksDisplay from "./TasksDisplay"
 import { nanoid } from "nanoid"
-// import AllTasks from "../TasksData"
 
 export default function TasksWrapper() {
     const [ myTasks, setmyTasks ] = useState([])
