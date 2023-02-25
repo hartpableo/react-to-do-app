@@ -11,10 +11,10 @@ export default function TasksWrapper() {
         setmyTasks( [ ...myTasks, newTask ] );
     }
 
-    // function removeTask(id) {
-    //     const remainingTasks = myTasks.filter(task => id !== task.id)
-    //     setmyTasks(remainingTasks)
-    // }
+    function removeTask(id) {
+        const remainingTasks = myTasks.filter(task => id !== task.id)
+        setmyTasks(remainingTasks)
+    }
 
     return (
         <main className="container">
@@ -25,6 +25,7 @@ export default function TasksWrapper() {
                 <TasksDisplay
                     tasks={ myTasks }
                     isEmpty={ ( myTasks.length == 0 ) ? true : false }
+                    removeTask={ removeTask }
                 />
             </div>
         </main>

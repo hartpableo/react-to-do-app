@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Todo from "./Todo"
 
 export default function TasksDisplay(props) {
-    const { tasks, isEmpty } = props
+    const { tasks, isEmpty, removeTask } = props
 
     const tasksList = tasks.map(taskItem => {
         return (
@@ -10,6 +10,8 @@ export default function TasksDisplay(props) {
                 key={ taskItem.id }
                 id={ taskItem.id }
                 taskName={ taskItem.taskName }
+                removeTask={ removeTask }
+                tasks={ tasks }
             />
         )
     })

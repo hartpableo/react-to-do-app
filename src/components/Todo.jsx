@@ -3,12 +3,16 @@ import TaskComplete from "./TaskComplete"
 import TaskRemove from "./TaskRemove"
 
 export default function Todo(props) {
-    const { id, taskName, removeHandle } = props
+    const { id, taskName, removeTask, tasks } = props
 
     const [ taskCompleted, setTaskCompleted ] = useState(false)
 
     function isCompleteHandler() {
         setTaskCompleted(true)
+    }
+
+    function removeHandle(taskId) {
+        removeTask(taskId)
     }
 
     return (
@@ -24,7 +28,7 @@ export default function Todo(props) {
                     onClick={ isCompleteHandler }
                 />
                 <TaskRemove
-                    onClick={ removeHandle }
+                    removeTask={ removeHandle }
                 />
             </div>
         </li>
